@@ -13,14 +13,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsnomad/cache-lite"
+    "url": "git+https://github.com/jsnomad/cache-lite.git"
   },
   "license": "MIT",
   "scripts": {
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
     "lint": "eslint ./src",
-    "mocha": "./node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill",
+    "mocha": "mocha --compilers js:babel-register --require babel-polyfill",
     "test": "npm run lint && npm run mocha"
   },
   "devDependencies": {
@@ -34,5 +34,13 @@
     "eslint-config-airbnb-base": "^1.0.4",
     "eslint-plugin-import": "^1.6.0",
     "mocha": "^2.4.5"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/jsnomad/cache-lite/issues"
+  },
+  "homepage": "https://github.com/jsnomad/cache-lite#readme",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {}
 }
