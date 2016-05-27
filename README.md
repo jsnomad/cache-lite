@@ -59,7 +59,7 @@ Value
 
 Type: `number`
 
-Time to leave
+Time to live
 
 ###get(key)
 Returns a promises
@@ -78,7 +78,8 @@ Returns the number of elements in the cache
 ###clear()
 Delete all cached values from the cache
 
-**Requirement : Node >= 5.0**
+## Requirement
+Node >= 5.0
 
 ## License
 MIT &copy; [Thomas Blanc-Hector](https://github.com/jsnomad)
