@@ -11,7 +11,7 @@ export class CacheLite {
    * Set value in cache
    * @param {string} key
    * @param {string} value
-   * @param {string} time to leave
+   * @param {string} time to live
    * @return {Promise}
    */
   set(key, val, ttl) {
