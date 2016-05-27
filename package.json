@@ -1,0 +1,38 @@
+{
+  "name": "cache-lite",
+  "main": "./index",
+  "version": "0.0.1",
+  "description": "Simple cache system",
+  "author": "Thomas Blanc-hector <thomas.blanc.hector@gmail.com>",
+  "keywords": [
+    "cache",
+    "light",
+    "javascript",
+    "nodejs",
+    "es6"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsnomad/cache-lite"
+  },
+  "license": "MIT",
+  "scripts": {
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
+    "lint": "eslint ./src",
+    "mocha": "./node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill",
+    "test": "npm run lint && npm run mocha"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-eslint": "^6.0.0",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "chai": "^3.5.0",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb-base": "^1.0.4",
+    "eslint-plugin-import": "^1.6.0",
+    "mocha": "^2.4.5"
+  }
+}
