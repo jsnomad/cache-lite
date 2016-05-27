@@ -1,7 +1,7 @@
 # Cache Lite [![CircleCI](https://circleci.com/gh/jsnomad/cache-lite.svg?style=svg)](https://circleci.com/gh/jsnomad/cache-lite)
 
 ## Description
-Simple node key value cache system
+Simple node in-memory caching system
 
 ## Download
 The source is available for download from
