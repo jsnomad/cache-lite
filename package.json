@@ -1,7 +1,7 @@
 {
   "name": "cache-lite",
   "main": "./index",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple cache system",
   "author": "Thomas Blanc-hector <thomas.blanc.hector@gmail.com>",
   "keywords": [
