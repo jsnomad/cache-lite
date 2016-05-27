@@ -3,6 +3,14 @@
 ## Description
 Simple node key value cache system
 
+## Download
+The source is available for download from
+[GitHub](https://github.com/jsnomad/cache-lite).
+Alternatively, you can install using Node Package Manager (npm):
+<pre>
+  npm install cache-lite
+</pre>
+
 ## Example
 ```js
 const CacheLite = require('cache-lite');
