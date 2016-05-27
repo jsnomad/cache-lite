@@ -1,42 +1,74 @@
-# Cache Lite
+# Cache Lite [![CircleCI](https://circleci.com/gh/jsnomad/cache-lite.svg?style=svg)](https://circleci.com/gh/jsnomad/cache-lite)
 
 ## Description
 Simple node key value cache system
 
-## Using
-Store a key
-```
-//During 3000ms
-cache.set("myKey", "myData", 3000).then(() => {})
-//Forever
-cache.set("myKey", "myData").then(() => {})
-```
+## Example
+```js
+const CacheLite = require('cache-lite');
 
-Get a key
-```
-//Return a promise
+const cache = new CacheLite()
+
+// Set value in cache for 200ms
+cache.set("myKey", "myData", 200).then(() => {
+})
+
+// Get value from the cache
 cache.get("myKey").then((value) => {
-})
-//Rejected promises if the key doesn't exist
-.catch(function(err) {
+  console.log(value); // myData
 })
 
+console.log(cache.getKeys()) // [ 'myKey' ]
+
+console.log(cache.size()) // 1
+
+//Get value from the cache after 300ms
+setTimeout(() => {
+  cache.get("myKey").then((value) => {
+  }).catch((err) => {
+    // Error: The key myKey doesn't exist in cache
+  })
+}, 300);
+
 ```
 
-Get keys stored in the cache
-```
-cache.getKeys()
-```
+## API
+###set(key, value, ttl)
+Returns a promises
+#### key
 
-Get the number of elements in the cache
-```
-cache.size()
-```
+Type: `string`
 
+Key
+
+#### value
+
+Type: `string`
+
+Value
+
+#### ttl (optional)
+
+Type: `number`
+
+Time to leave
+
+###get(key)
+Returns a promises
+#### key
+
+Type: `string`
+
+Key
+
+###getKeys()
+Returns keys stored in the cache
+
+###size()
+Returns the number of elements in the cache
+
+###clear()
 Delete all cached values from the cache
-```
-cache.clear()
-```
 
 **Requirement : Node >= 5.0**
 
