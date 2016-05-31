@@ -20,12 +20,7 @@ export class CacheLite {
       if (ttl !== undefined && typeof (ttl) !== 'number') {
         reject(new Error('The ttl must be a number'))
       }
-      // Get the value of an already cached value of this key
-      const oldValue = this.cacheStore.get(key)
-      // If yes, clear the delay set by the previous setTimeout
-      if (oldValue) {
-        clearTimeout(oldValue.timeout)
-      }
+      this.clearCacheTimeout(key)
       const newValue = {
         value: val,
         createdTime: Date.now(),
@@ -43,12 +38,26 @@ export class CacheLite {
   }
 
   /**
+   * Clear Timeout
+   * @param {string} key
+   */
+  clearCacheTimeout(key) {
+    // Get the value of an already cached value of this key
+    const oldValue = this.cacheStore.get(key)
+    // If yes, clear the delay set by the previous setTimeout
+    if (oldValue) {
+      clearTimeout(oldValue.timeout)
+    }
+  }
+
+  /**
    * Delete value from the cache
    * @param {string} key
    * @return {Promise}
    */
   del(key) {
     return new Promise((resolve, reject) => {
+      this.clearCacheTimeout(key)
       // Returns true if an element in the cache existed and has been removed
       const isExist = this.cacheStore.delete(key)
       if (isExist) {
