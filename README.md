@@ -26,9 +26,9 @@ cache.get("myKey").then((value) => {
   console.log(value); // myData
 })
 
-console.log(cache.getKeys()) // [ 'myKey' ]
+cache.getKeys() // [ 'myKey' ]
 
-console.log(cache.size()) // 1
+cache.size() // 1
 
 //Get value from the cache after 300ms
 setTimeout(() => {
