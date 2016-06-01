@@ -27,7 +27,7 @@ export class CacheLite {
       }
       // If the ttl is defined, delete the value from the cache after XX ms
       if (ttl) {
-        newValue.timout = setTimeout(() => {
+        newValue.timeout = setTimeout(() => {
           this.cacheStore.delete(key)
         }, ttl)
       }
