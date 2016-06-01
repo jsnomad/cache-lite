@@ -1,7 +1,7 @@
 {
   "name": "cache-lite",
   "main": "./index",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node in-memory caching system",
   "author": "Thomas Blanc-hector <thomas.blanc.hector@gmail.com>",
   "keywords": [
