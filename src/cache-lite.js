@@ -17,8 +17,8 @@ export class CacheLite {
   set(key, val, ttl) {
     return new Promise((resolve, reject) => {
       // Check if the ttl is valid
-      if (ttl !== undefined && typeof (ttl) !== 'number') {
-        reject(new Error('The ttl must be a number'))
+      if (ttl !== undefined && (typeof (ttl) !== 'number' || ttl <= 0)) {
+        reject(new Error('The ttl must be a number and > 0'))
       }
       this.clearCacheTimeout(key)
       const newValue = {
@@ -63,7 +63,7 @@ export class CacheLite {
       if (isExist) {
         resolve()
       } else {
-        reject(new Error(`The key ${key} doesn't exist in cache`))
+        reject(new Error(`The key ${key} doesn't exist in the cache`))
       }
     })
   }
@@ -79,7 +79,7 @@ export class CacheLite {
       if (temp) {
         resolve(temp.value)
       } else {
-        reject(new Error(`The key ${key} doesn't exist in cache`))
+        reject(new Error(`The key ${key} doesn't exist in the cache`))
       }
     })
   }
