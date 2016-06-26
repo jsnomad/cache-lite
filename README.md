@@ -1,3 +1,5 @@
+[![NPM Badge](https://nodei.co/npm/cache-lite.png?downloads=true&downloadRank=true&stars=true))](https://www.npmjs.com/package/cache-lite)
+
 # cache-lite [![CircleCI](https://circleci.com/gh/jsnomad/cache-lite.svg?style=svg)](https://circleci.com/gh/jsnomad/cache-lite)
 
 ## Description
@@ -17,7 +19,7 @@ const CacheLite = require('cache-lite');
 
 const cache = new CacheLite()
 
-// Set value in cache for 200ms
+// Set value in the cache for 200ms
 cache.set("myKey", "myData", 200).then(() => {
 })
 
@@ -34,7 +36,7 @@ cache.size() // 1
 setTimeout(() => {
   cache.get("myKey").then((value) => {
   }).catch((err) => {
-    // Error: The key myKey doesn't exist in cache
+    // Error: The key myKey doesn't exist in the cache
   })
 }, 300);
 
