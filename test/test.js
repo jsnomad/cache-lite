@@ -3,7 +3,7 @@ import { expect, should } from 'chai'
 
 should()
 
-const cache = new CacheLite();
+const cache = new CacheLite()
 
 describe('Cache', () => {
   it('should store a value', (done) => {
@@ -23,10 +23,17 @@ describe('Cache', () => {
   it('should not return a value', (done) => {
     setTimeout(() => {
       cache.get("KeyTest").then(value => {
-      }).catch((err) => {
+      }).catch(() => {
         done()
       })
     }, 60)
+  })
+  it('should delete a value', (done) => {
+    cache.set("KeyTestDel", "DataTest", 50).then(val => {
+      cache.del('KeyTestDel').then(() => {
+        done()
+      })
+    })
   })
 })
 
@@ -37,9 +44,21 @@ describe('TTL', () => {
       done()
     })
   })
+  it('should be != 0', (done) => {
+    cache.set("KeyTest", "DataTest", 0).then(val => {
+    }).catch(() => {
+      done()
+    })
+  })
+  it('should be > 0', (done) => {
+    cache.set("KeyTest", "DataTest", -1).then(val => {
+    }).catch(() => {
+      done()
+    })
+  })
   it('should not be a string', (done) => {
     cache.set("KeyTest2", "DataTest", "string").then(val => {
-    }).catch((err) => {
+    }).catch(() => {
       done()
     })
   })
