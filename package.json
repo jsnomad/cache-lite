@@ -1,7 +1,7 @@
 {
   "name": "cache-lite",
   "main": "./index",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Node in-memory caching system",
   "author": "Thomas Blanc-hector <thomas.blanc.hector@gmail.com>",
   "keywords": [
@@ -21,7 +21,7 @@
     "prepublish": "npm run compile",
     "lint": "eslint ./src",
     "mocha": "mocha --compilers js:babel-register --require babel-polyfill",
-    "test": "npm run lint && npm run mocha"
+    "test": "npm run compile && npm run lint && npm run mocha"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
