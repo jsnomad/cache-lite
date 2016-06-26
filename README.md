@@ -1,4 +1,4 @@
-[![NPM Badge](https://nodei.co/npm/cache-lite.png?downloads=true&downloadRank=true&stars=true))](https://www.npmjs.com/package/cache-lite)
+[![NPM Badge](https://nodei.co/npm/cache-lite.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/cache-lite)
 
 # cache-lite [![CircleCI](https://circleci.com/gh/jsnomad/cache-lite.svg?style=svg)](https://circleci.com/gh/jsnomad/cache-lite)
 
